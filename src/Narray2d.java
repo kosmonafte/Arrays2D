@@ -55,12 +55,25 @@ public class Narray2d {
                 }
             }
         } else if (string.equals("O")) {
+            int cicle = size/2;
             int count = 1;
-            for (int i = 0; i < size/2; i++) {
-                for (int j = i; j < size - 2; j++) {
-                    this.array2d[i][j] = count++;
+            for (int k = 0; k < cicle; k++) {
+                for (int i = k; i < size - k; i++) {
+                    this.array2d[k][i] = count;
+                    count++;
                 }
-                
+                for (int i = k + 1; i < size - k; i++) {
+                    this.array2d[i][size-k-1] = count;
+                    count++;
+                }
+                for (int i = size-k-2; i > k-1; i--) {
+                    this.array2d[size-1-k][i] = count;
+                    count++;
+                }
+                for (int i = size-k-2; i > k; i--) {
+                    this.array2d[i][k] = count;
+                    count++;
+                }
             }
         }
     }
