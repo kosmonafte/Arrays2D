@@ -80,7 +80,6 @@ public class Narray2d {
             }
         }
     }
-
     public Narray2d(int y, int x, String str) {
         this.sizeI = y;
         this.sizeJ = x;
@@ -100,7 +99,6 @@ public class Narray2d {
             }
         }
     }
-
     String showArray() {
         String str = new String();
         for (int i = 0; i < this.array2d.length; i++){
@@ -111,7 +109,6 @@ public class Narray2d {
         }
         return str;
     }
-
     String minAndMax(){
         String str = new String();
         int min = this.array2d[0][0];
