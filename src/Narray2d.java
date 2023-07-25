@@ -75,6 +75,29 @@ public class Narray2d {
                     count++;
                 }
             }
+            if (size % 2 != 0){
+                this.array2d[size/2][size/2]=size*size;
+            }
+        }
+    }
+
+    public Narray2d(int y, int x, String str) {
+        this.sizeI = y;
+        this.sizeJ = x;
+        this.array2d = new int[this.sizeI][this.sizeJ];
+        int count = 1;
+        int cicle = x + y - 1;
+        if (str.equals("Z")) {
+            for (int k = cicle/2; k > -(cicle/2+1); k--) {
+                for (int i = 0; i < y; i++) {
+                    for (int j = 0; j < x; j++) {
+                        if (i == cicle / 2 - j - k) {
+                            this.array2d[i][j] = count;
+                            count++;
+                        }
+                    }
+                }
+            }
         }
     }
 
